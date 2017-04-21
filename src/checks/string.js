@@ -2,9 +2,13 @@
 const log = require('../log');
 
 function stringMatch(params, rule) {
-    const ruleValue = (rule.value[0] ? rule.value[0] : '').toLowerCase();
     const prop = params.products[0][rule.property];
-    const productValue = (prop || '').toLowerCase();
+    let ruleValue = (rule.value[0] ? rule.value[0] : '').toLowerCase();
+    let productValue = (prop || '').toLowerCase();
+
+    // normalize double spaces to single
+    productValue = productValue.replace(/[ ]+/g, ' ').trim();
+    ruleValue = ruleValue.replace(/[ ]+/g, ' ').trim();
 
     let match = false;
     switch (rule.op) {

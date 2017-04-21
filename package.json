@@ -1,6 +1,6 @@
 {
   "name": "product-set-matching",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Evaluates product data against a ruleset of matching criteria.",
   "main": "src/index.js",
   "scripts": {
