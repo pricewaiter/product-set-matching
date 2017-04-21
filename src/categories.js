@@ -1,5 +1,3 @@
-// this file comes from automation service.
-// TODO: share code with automation
 
 // A category is represented as an array of *segments* indicating hierarchy,
 // e.g.:
@@ -9,23 +7,36 @@
 // If the category has only one segment, it can be represented as a
 // string, e.g. `"Electronics"`.
 
-/**
- * Given arbitrary input, returns an array of category segments.
- * @param  {String|Array} category The category segment data
- * @return {Array} The set of category segments.
- */
+function normalizeCategorySegment(segment) {
+    if (segment === undefined || segment === null) {
+        return '';
+    }
+
+    return String(segment).trim();
+}
+
 function normalizeCategory(category) {
-    const result = Array.isArray(category) ? category : [category];
-    return (
-        result
-            .map((segment) => {
-                if (segment === null || segment === undefined) {
-                    return '';
-                }
-                return String(segment).trim();
-            })
-            .filter(segment => segment !== '')
-    );
+    if (category === null || category === undefined) {
+        return '';
+    }
+
+    if (Array.isArray(category)) {
+        // This should be an array of category segment strings
+        const segments = category
+            .map(normalizeCategorySegment)
+            .filter(segment => segment !== '');
+
+        if (segments.length === 0) {
+            return '';
+        } else if (segments.length === 1) {
+            // Represent single-segment categories more efficiently as strings
+            return segments[0];
+        }
+
+        return segments;
+    }
+
+    return normalizeCategorySegment(category);
 }
 
 /**
