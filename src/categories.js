@@ -29,6 +29,22 @@ function normalizeCategory(category) {
 }
 
 /**
+ * Given unknown category input, normalizes into an array of
+ * either strings or arrays of strings.
+ */
+function normalizeCategories(categories) {
+    if (!Array.isArray(categories)) {
+        return [];
+    }
+
+    return (
+        categories
+            .map(normalizeCategory)
+            .filter(category => category !== '')
+    );
+}
+
+/**
  * @param  {Array} catA
  * @param  {Array} catB
  * @return {Boolean} Whether the two (normalized) categories match.
@@ -49,5 +65,6 @@ function categoriesEqual(a, b) {
 
 module.exports = {
     normalizeCategory,
+    normalizeCategories,
     categoriesEqual,
 };
