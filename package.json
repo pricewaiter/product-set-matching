@@ -13,7 +13,7 @@
     "url": "github.com/pricewaiter/product-set-matching"
   },
   "engines": {
-    "node": "6.10.2"
+    "node": ">=4.0.0"
   },
   "author": "PriceWaiter",
   "license": "MIT",
