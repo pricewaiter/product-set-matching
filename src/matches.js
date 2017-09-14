@@ -6,7 +6,7 @@ const { stringMatch } = require('./checks/string');
 const log = require('./log');
 
 function runChecks(params, rule, sets, type) {
-    if (rule.property === 'price') {
+    if (/price/.exec(rule.property)) {
         const result = numberMatch(params, rule);
         log.debug(`Checking for ${type} number match`, rule, result);
         return result;
