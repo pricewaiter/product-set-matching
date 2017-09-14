@@ -43,7 +43,7 @@ function stringMatch(params, rule) {
         }
         break;
     default:
-        log(`Product Set matching op not found: ${rule.op}`);
+        log.debug(`Product Set matching op not found: ${rule.op}`);
         break;
     }
     return match;
