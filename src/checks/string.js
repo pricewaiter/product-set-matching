@@ -1,4 +1,3 @@
-
 const log = require('../log');
 
 function stringMatch(params, rule) {
@@ -12,39 +11,39 @@ function stringMatch(params, rule) {
 
     let match = false;
     switch (rule.op) {
-    case 'eq':
-        if (productValue === ruleValue) {
-            match = true;
-        }
-        break;
-    case 'noteq':
-        if (productValue !== ruleValue) {
-            match = true;
-        }
-        break;
-    case 'contains':
-        if (productValue.indexOf(ruleValue) >= 0) {
-            match = true;
-        }
-        break;
-    case 'notcontains':
-        if (productValue.indexOf(ruleValue) < 0) {
-            match = true;
-        }
-        break;
-    case 'startswith':
-        if (productValue.startsWith(ruleValue)) {
-            match = true;
-        }
-        break;
-    case 'endswith':
-        if (productValue.endsWith(ruleValue)) {
-            match = true;
-        }
-        break;
-    default:
-        log.debug(`Product Set matching op not found: ${rule.op}`);
-        break;
+        case 'eq':
+            if (productValue === ruleValue) {
+                match = true;
+            }
+            break;
+        case 'noteq':
+            if (productValue !== ruleValue) {
+                match = true;
+            }
+            break;
+        case 'contains':
+            if (productValue.indexOf(ruleValue) >= 0) {
+                match = true;
+            }
+            break;
+        case 'notcontains':
+            if (productValue.indexOf(ruleValue) < 0) {
+                match = true;
+            }
+            break;
+        case 'startswith':
+            if (productValue.startsWith(ruleValue)) {
+                match = true;
+            }
+            break;
+        case 'endswith':
+            if (productValue.endsWith(ruleValue)) {
+                match = true;
+            }
+            break;
+        default:
+            log.debug(`Product Set matching op not found: ${rule.op}`);
+            break;
     }
     return match;
 }

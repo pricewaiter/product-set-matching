@@ -7,8 +7,7 @@ module.exports = {
         fraud_score: 0.1,
         ip: '1.2.3.4',
         subtotal_cents: 3000,
-        products:
-        [
+        products: [
             {
                 brand: 'Null',
                 name: 'No match',
@@ -26,8 +25,7 @@ module.exports = {
             store_id: 'SETMATCHING',
             sort_index: 1,
             product_set: '71e33676-beb9-4cd7-8aa2-6fcb858d795d',
-            quantity_ranges:
-            [
+            quantity_ranges: [
                 {
                     min: 1,
                     max: 10,

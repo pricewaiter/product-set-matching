@@ -1,4 +1,3 @@
-
 // A category is represented as an array of *segments* indicating hierarchy,
 // e.g.:
 //
@@ -24,7 +23,7 @@ function normalizeCategory(category) {
         // This should be an array of category segment strings
         const segments = category
             .map(normalizeCategorySegment)
-            .filter(segment => segment !== '');
+            .filter((segment) => segment !== '');
 
         if (segments.length === 0) {
             return '';
@@ -48,11 +47,9 @@ function normalizeCategories(categories) {
         return [];
     }
 
-    return (
-        categories
-            .map(normalizeCategory)
-            .filter(category => category !== '')
-    );
+    return categories
+        .map(normalizeCategory)
+        .filter((category) => category !== '');
 }
 
 /**

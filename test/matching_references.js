@@ -18,11 +18,13 @@ describe('product set matching references other product sets', () => {
         const setIdB = 'e6ecd8e8-3cc8-11e6-ac61-9e71128cae77';
         sets[setIdB] = {
             id: setIdB,
-            all_rules: [{
-                op: 'contains',
-                value: ['Rad'],
-                property: 'name',
-            }],
+            all_rules: [
+                {
+                    op: 'contains',
+                    value: ['Rad'],
+                    property: 'name',
+                },
+            ],
         };
 
         sets[rules[0].product_set].all_rules[0] = {
@@ -162,11 +164,13 @@ describe('product set matching references other product sets', () => {
         const setIdB = 'e6ecd8e8-3cc8-11e6-ac61-9e71128cae77';
         sets[setIdB] = {
             id: setIdB,
-            all_rules: [{
-                op: 'contains',
-                value: ['Rad'],
-                property: 'name',
-            }],
+            all_rules: [
+                {
+                    op: 'contains',
+                    value: ['Rad'],
+                    property: 'name',
+                },
+            ],
         };
 
         sets[rules[0].product_set].all_rules[0] = {
@@ -195,11 +199,13 @@ describe('product set matching references other product sets', () => {
         const setIdB = 'e6ecd8e8-3cc8-11e6-ac61-9e71128cae77';
         sets[setIdB] = {
             id: setIdB,
-            all_rules: [{
-                op: 'contains',
-                value: ['Bad'],
-                property: 'name',
-            }],
+            all_rules: [
+                {
+                    op: 'contains',
+                    value: ['Bad'],
+                    property: 'name',
+                },
+            ],
         };
 
         sets[rules[0].product_set].all_rules[0] = {

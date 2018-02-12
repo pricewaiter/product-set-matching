@@ -1,4 +1,3 @@
-
 const { numberMatch } = require('./checks/number');
 const { categoryMatch } = require('./checks/category');
 const { stringMatch } = require('./checks/string');
@@ -44,12 +43,16 @@ function productSetMatches(params, productSetId, sets) {
 
     let alls = true;
     if (set.all_rules && set.all_rules.length) {
-        alls = set.all_rules.every(rule => runChecks(params, rule, sets, 'all'));
+        alls = set.all_rules.every((rule) =>
+            runChecks(params, rule, sets, 'all'),
+        );
     }
 
     let anys = true;
     if (set.any_rules && set.any_rules.length) {
-        anys = set.any_rules.some(rule => runChecks(params, rule, sets, 'any'));
+        anys = set.any_rules.some((rule) =>
+            runChecks(params, rule, sets, 'any'),
+        );
     }
 
     log.debug('Matching summary for ', productSetId, { alls, anys });
