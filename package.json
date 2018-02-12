@@ -1,6 +1,6 @@
 {
     "name": "product-set-matching",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Evaluates product data against a ruleset of matching criteria.",
     "main": "lib/index.js",
     "module": "src/index.js",
