@@ -1,6 +1,6 @@
-const { categoriesEqual, normalizeCategory } = require('../categories');
+import { categoriesEqual, normalizeCategory } from '../categories';
 
-function categoryMatch(params, rule) {
+export function categoryMatch(params, rule) {
     if (!Array.isArray(rule.value)) {
         return false;
     }
@@ -28,7 +28,3 @@ function categoryMatch(params, rule) {
             return false;
     }
 }
-
-module.exports = {
-    categoryMatch,
-};

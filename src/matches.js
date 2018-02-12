@@ -1,8 +1,8 @@
-const { numberMatch } = require('./checks/number');
-const { categoryMatch } = require('./checks/category');
-const { stringMatch } = require('./checks/string');
+import { numberMatch } from './checks/number';
+import { categoryMatch } from './checks/category';
+import { stringMatch } from './checks/string';
 
-const log = require('./log');
+import log from './log';
 
 function runChecks(params, rule, sets, type) {
     if (/price/.exec(rule.property)) {
@@ -34,7 +34,7 @@ function runChecks(params, rule, sets, type) {
     return result;
 }
 
-function productSetMatches(params, productSetId, sets) {
+export function productSetMatches(params, productSetId, sets) {
     const set = sets[productSetId];
     if (!set) {
         log.debug(`Missing product set ${set}!`);
@@ -58,7 +58,3 @@ function productSetMatches(params, productSetId, sets) {
     log.debug('Matching summary for ', productSetId, { alls, anys });
     return alls && anys;
 }
-
-module.exports = {
-    productSetMatches,
-};

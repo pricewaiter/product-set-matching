@@ -1,10 +1,10 @@
-const expect = require('chai').expect;
-const { getProductMatches } = require('../src/');
+import { expect } from 'chai';
+
+import { getProductMatches } from '../src/';
+import { params, rules, sets } from './data/product_set_matching';
 
 describe('product set matching', () => {
     it('normalizes spaces in rules', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -26,8 +26,6 @@ describe('product set matching', () => {
     });
 
     it('normalizes trailing spaces in rules', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -48,8 +46,6 @@ describe('product set matching', () => {
         expect(result.length).to.equal(1);
     });
     it('normalizes spaces in products', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -71,8 +67,6 @@ describe('product set matching', () => {
     });
 
     it('normalizes trailing spaces in products', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -94,8 +88,6 @@ describe('product set matching', () => {
     });
 
     it('normalizes spaces in both', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',

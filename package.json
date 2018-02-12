@@ -4,9 +4,11 @@
     "description": "Evaluates product data against a ruleset of matching criteria.",
     "main": "src/index.js",
     "scripts": {
+        "build": "babel",
         "lint": "eslint src test",
-        "test-mocha": "mocha test",
-        "test": "npm run lint && npm run test-mocha"
+        "prepublish": "yarn build",
+        "test-mocha": "mocha -r @babel/register test",
+        "test": "yarn lint && yarn test-mocha"
     },
     "repository": {
         "type": "git",
@@ -18,6 +20,10 @@
     "author": "PriceWaiter",
     "license": "MIT",
     "devDependencies": {
+        "@babel/cli": "^7.0.0-beta.40",
+        "@babel/core": "^7.0.0-beta.40",
+        "@babel/preset-env": "^7.0.0-beta.40",
+        "@babel/register": "^7.0.0-beta.40",
         "babel-eslint": "^8.2.1",
         "chai": "^4.1.2",
         "eslint": "^4.17.0",

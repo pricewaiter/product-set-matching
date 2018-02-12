@@ -1,4 +1,4 @@
-module.exports = function sortAutomationRules(rules) {
+export default function sortAutomationRules(rules) {
     return rules.sort((a, b) => {
         if (b.sort_index === undefined || a.sort_index < b.sort_index) {
             return -1;
@@ -9,4 +9,4 @@ module.exports = function sortAutomationRules(rules) {
 
         return 0;
     });
-};
+}

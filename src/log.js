@@ -1,4 +1,2 @@
 // noop logger
-const log = { debug: () => {} };
-
-module.exports = log;
+export default { debug: () => {} };

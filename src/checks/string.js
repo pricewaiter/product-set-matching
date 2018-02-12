@@ -1,6 +1,6 @@
-const log = require('../log');
+import log from '../log';
 
-function stringMatch(params, rule) {
+export function stringMatch(params, rule) {
     const prop = params.products[0][rule.property];
     let ruleValue = (rule.value[0] ? rule.value[0] : '').toLowerCase();
     let productValue = (prop || '').toLowerCase();
@@ -47,7 +47,3 @@ function stringMatch(params, rule) {
     }
     return match;
 }
-
-module.exports = {
-    stringMatch,
-};

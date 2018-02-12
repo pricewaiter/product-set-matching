@@ -1,6 +1,6 @@
-const { expect } = require('chai');
+import { expect } from 'chai';
 
-const { categoryMatch } = require('../src/checks/category');
+import { categoryMatch } from '../src/checks/category';
 
 describe('Category matching', () => {
     const cellPhone = {

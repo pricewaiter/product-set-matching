@@ -1,4 +1,4 @@
-function numberMatch(params, rule) {
+export function numberMatch(params, rule) {
     // NOTE: Product sets do *not* store price data in cents.
     const ruleValue = rule.value.map((nonCentsValue) =>
         Math.round(nonCentsValue * 100),
@@ -31,7 +31,3 @@ function numberMatch(params, rule) {
     }
     return match;
 }
-
-module.exports = {
-    numberMatch,
-};

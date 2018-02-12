@@ -14,7 +14,7 @@ function normalizeCategorySegment(segment) {
     return String(segment).trim();
 }
 
-function normalizeCategory(category) {
+export function normalizeCategory(category) {
     if (category === null || category === undefined) {
         return '';
     }
@@ -42,7 +42,7 @@ function normalizeCategory(category) {
  * Given unknown category input, normalizes into an array of
  * either strings or arrays of strings.
  */
-function normalizeCategories(categories) {
+export function normalizeCategories(categories) {
     if (!Array.isArray(categories)) {
         return [];
     }
@@ -57,7 +57,7 @@ function normalizeCategories(categories) {
  * @param  {Array} catB
  * @return {Boolean} Whether the two (normalized) categories match.
  */
-function categoriesEqual(a, b) {
+export function categoriesEqual(a, b) {
     if (a.length !== b.length) {
         return false;
     }
@@ -70,9 +70,3 @@ function categoriesEqual(a, b) {
 
     return true;
 }
-
-module.exports = {
-    normalizeCategory,
-    normalizeCategories,
-    categoriesEqual,
-};

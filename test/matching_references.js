@@ -1,10 +1,9 @@
-const expect = require('chai').expect;
-const { getProductMatches } = require('../src/');
+import { expect } from 'chai';
+import { getProductMatches } from '../src/';
+import { params, rules, sets } from './data/product_set_matching';
 
 describe('product set matching references other product sets', () => {
     it('checks 1 degree away', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -38,8 +37,6 @@ describe('product set matching references other product sets', () => {
     });
 
     it('checks 2 degree away', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -96,8 +93,6 @@ describe('product set matching references other product sets', () => {
     });
 
     it('checks failure 2 degree away', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -149,8 +144,6 @@ describe('product set matching references other product sets', () => {
     });
 
     it('supports not equal', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -184,8 +177,6 @@ describe('product set matching references other product sets', () => {
     });
 
     it('is able to match using not equal', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',

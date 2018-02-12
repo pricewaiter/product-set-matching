@@ -1,6 +1,6 @@
-const { expect } = require('chai');
+import { expect } from 'chai';
 
-const { normalizeCategories } = require('../src/categories');
+import { normalizeCategories } from '../src/categories';
 
 describe('normalizeCategories', () => {
     const tests = [

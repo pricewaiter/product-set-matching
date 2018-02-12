@@ -1,7 +1,7 @@
-const sortAutomationRules = require('./sort');
-const { productSetMatches } = require('./matches');
+import sortAutomationRules from './sort';
+import { productSetMatches } from './matches';
 
-function getProductMatches(params, rules, sets) {
+export function getProductMatches(params, rules, sets) {
     return sortAutomationRules(
         rules.filter(
             (rule) =>
@@ -10,7 +10,3 @@ function getProductMatches(params, rules, sets) {
         ),
     );
 }
-
-module.exports = {
-    getProductMatches,
-};

@@ -1,10 +1,10 @@
-const expect = require('chai').expect;
-const { getProductMatches } = require('../src/');
+import { expect } from 'chai';
+import { getProductMatches } from '../src/';
+
+import { params, rules, sets } from './data/product_set_matching';
 
 describe('product set matching', () => {
     it('matches based on exact SKU', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -26,8 +26,6 @@ describe('product set matching', () => {
     });
 
     it('matches based exact on SKU exclusion', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -49,8 +47,6 @@ describe('product set matching', () => {
     });
 
     it('matches based on partial SKU', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -72,8 +68,6 @@ describe('product set matching', () => {
     });
 
     it('matches based on partial SKU exclusion', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -95,8 +89,6 @@ describe('product set matching', () => {
     });
 
     it('matches based on one of many SKUs', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -131,8 +123,6 @@ describe('product set matching', () => {
     });
 
     it('matches based on brand', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -156,8 +146,6 @@ describe('product set matching', () => {
     });
 
     it('matches based on exact params name', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -181,8 +169,6 @@ describe('product set matching', () => {
     });
 
     it('matches based on start of params name', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -206,8 +192,6 @@ describe('product set matching', () => {
     });
 
     it('matches based on end of params name', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -231,8 +215,6 @@ describe('product set matching', () => {
     });
 
     it('matches based on exact price', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -256,8 +238,6 @@ describe('product set matching', () => {
     });
 
     it('matches based on price range', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -281,8 +261,6 @@ describe('product set matching', () => {
     });
 
     it('matches based on price minimum', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -306,8 +284,6 @@ describe('product set matching', () => {
     });
 
     it('matches based on price maximum', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -331,8 +307,6 @@ describe('product set matching', () => {
     });
 
     it('does not think a string is a regex', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -356,8 +330,6 @@ describe('product set matching', () => {
     });
 
     it('matches strings regardless of case', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
@@ -379,8 +351,6 @@ describe('product set matching', () => {
     });
 
     it('treats null-ish values as blank string', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: '',
@@ -402,8 +372,6 @@ describe('product set matching', () => {
     });
 
     it('matches when any_rules have been cleared out', () => {
-        const { params, rules, sets } = require('./data/product_set_matching');
-
         params.products = [
             {
                 brand: 'Nike',
